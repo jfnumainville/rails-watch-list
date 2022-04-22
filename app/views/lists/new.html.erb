@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row justify-content-left">
+    <div class="col-4 my-3">
+      <h2>Add a Review</h2>
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name, placeholder: "Add your list name" %>
+        <%= f.submit "Add", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

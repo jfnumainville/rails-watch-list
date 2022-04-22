@@ -1,10 +1,24 @@
 <h1><%= @list.name %></h1>
 <br>
-<% @bookmarks.each do |bookmark| %>
-<h2><%= @movies.find(bookmark.movie_id).title %></h2>
+<% @list.bookmarks.each do |bookmark| %>
+<h2><%= bookmark.movie.title %></h2>
 <p><%= bookmark.comment %></p>
 <br>
 <p><%=link_to "Delete me?", bookmark_path(bookmark),  method: :delete, data: { confirm: "Are you sure?" } %></p>
 <% end %>
 
 <p><%= link_to "<< Back to the home page", lists_path%></p>
+
+
+<div class="container">
+  <div class="row justify-content-left">
+    <div class="col-4 my-3">
+      <h4>Add a Bookmark</h4>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment, placeholder: "Add your comment" %>
+        <%= f.association :movie, collection: Movie.all %>
+        <%= f.submit "Add", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

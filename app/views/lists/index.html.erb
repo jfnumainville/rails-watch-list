@@ -1,4 +1,23 @@
-<h2>My Lists</h2>
-<% @lists.each do |list| %>
-<p><%= link_to  list.name, list_path(list)%></p>
-<% end %>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>This is <strong>your</strong> movie watchlist</h1>
+    <p>by movies unlimited</p>
+     </div>
+</div>
+
+
+<div class="container">
+  <h2>My Lists</h2>
+    <div class="parent">
+        <% @lists.each do |list| %>
+      <%= link_to  list_path(list) do %>
+        <div class="movie-card">
+          <div class="card-img"><%= image_tag 'card-img'%></div>
+            <div class="card-body">
+            <p><%= list.name %></p>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+</div>
