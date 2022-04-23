@@ -19,6 +19,7 @@ puts "Creating Lists"
 
   p new_list = List.create(name: Faker::Book.genre)
 
+
  end
 
  movie_ids = []
