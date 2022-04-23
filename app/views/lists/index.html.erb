@@ -12,7 +12,7 @@
         <% @lists.each do |list| %>
       <%= link_to  list_path(list) do %>
         <div class="movie-card">
-          <div class="card-img"><%= cl_image_tag ("card-img")%></div>
+          <div class="card-img"><%= cl_image_tag list.picture.key, crop: :fill %></div>
             <div class="card-body">
             <p><%= list.name %></p>
             </div>

@@ -18,8 +18,9 @@ List.destroy_all
 puts "Creating Lists"
 5.times do
   p new_list = List.create(name: Faker::Book.genre)
-  # file = URI.open('https://picsum.photos/200/300?random=2')
-  # new_list.picture.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  file = URI.open('https://picsum.photos/200/300?random=2')
+  new_list.picture.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  new_list.save
  end
 
  movie_ids = []
