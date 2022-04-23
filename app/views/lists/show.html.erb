@@ -17,7 +17,6 @@
       <%= simple_form_for [@list, @bookmark] do |f| %>
         <%= f.input :comment, placeholder: "Add your comment" %>
         <%= f.association :movie, collection: Movie.all %>
-        <%= f.input :picture, as: :file %>
         <%= f.submit "Add", class: "btn btn-success" %>
       <% end %>
     </div>

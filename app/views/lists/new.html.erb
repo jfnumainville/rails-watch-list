@@ -4,6 +4,7 @@
       <h2>Add a Review</h2>
       <%= simple_form_for @list do |f| %>
         <%= f.input :name, placeholder: "Add your list name" %>
+        <%= f.input :picture, as: :file %>
         <%= f.submit "Add", class: "btn btn-success" %>
       <% end %>
     </div>
